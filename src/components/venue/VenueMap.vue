@@ -53,6 +53,7 @@
           :group="group"
           :event-seats="eventSeatsMap"
           :selected-ids="selectedSeatIds"
+          :price-zones="priceZones"
           @seat-click="onSeatClick"
         />
       </g>

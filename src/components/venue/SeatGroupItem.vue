@@ -52,13 +52,14 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { SeatGroup, EventSeat } from '@/types'
+import type { SeatGroup, EventSeat, PriceZone } from '@/types'
 import SeatItem from './SeatItem.vue'
 
 const props = defineProps<{
   group: SeatGroup
   eventSeats: Map<number, EventSeat>
   selectedIds: number[]
+  priceZones: PriceZone[]
 }>()
 
 const emit = defineEmits<{
@@ -78,5 +79,10 @@ const tableH = computed(() => 60)
 const sofaW = computed(() => seatCount.value * 35 + 20)
 const sofaH = computed(() => 50)
 
-const zoneColor = computed(() => props.group.priceZone?.color ?? '#64748b')
+const zoneColor = computed(() => {
+  const zoneId = props.group.priceZoneId
+  return props.priceZones.find(z => z.id === zoneId)?.color
+    ?? props.group.priceZone?.color
+    ?? '#64748b'
+})
 </script>

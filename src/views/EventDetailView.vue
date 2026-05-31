@@ -167,7 +167,10 @@ function seatPrice(seatId: number): number {
   const es = getSeatEventData(seatId)
   if (es?.priceOverride != null) return es.priceOverride
   const seat = es?.seat
-  const zone = seat?.priceZone ?? seat?.group?.priceZone
+  const priceZoneId = seat?.priceZoneId ?? seat?.group?.priceZoneId
+  const zone = priceZones.value?.find(z => z.id === priceZoneId)
+    ?? seat?.priceZone
+    ?? seat?.group?.priceZone
   return zone?.price ?? 0
 }
 
