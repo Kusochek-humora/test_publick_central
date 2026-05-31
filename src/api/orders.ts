@@ -11,3 +11,7 @@ export function useCreateOrder() {
       }),
   })
 }
+
+export function getPaymentUrl(orderId: number) {
+  return apiFetch<{ paymentUrl: string }>(`/orders/${orderId}/payment-url`)
+}

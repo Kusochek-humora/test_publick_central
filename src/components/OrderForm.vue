@@ -65,7 +65,7 @@ import { reactive, ref } from 'vue'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import Message from 'primevue/message'
-import { useCreateOrder } from '@/api/orders'
+import { useCreateOrder, getPaymentUrl } from '@/api/orders'
 import type { OrderResponse } from '@/types'
 
 const props = defineProps<{
@@ -112,7 +112,8 @@ async function submit() {
       customerEmail: form.customerEmail,
       customerPhone: form.customerPhone,
     })
-    emit('success', order)
+    const { paymentUrl } = await getPaymentUrl(order.orderId)
+    window.location.href = paymentUrl
   } catch (e: any) {
     if (e.status === 409 && e.data?.unavailableSeats) {
       apiError.value = `Некоторые места уже заняты: ${e.data.unavailableSeats.join(', ')}`
