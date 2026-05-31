@@ -1,4 +1,4 @@
-const BASE_URL = 'http://89.219.32.4:3000'
+const BASE_URL = 'https://backend.test-standup.ru'
 
 export async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
