@@ -113,6 +113,7 @@ async function submit() {
       customerPhone: form.customerPhone,
     })
     const { paymentUrl } = await getPaymentUrl(order.orderId)
+    console.log('[payment-url]', paymentUrl)
     window.location.href = paymentUrl
   } catch (e: any) {
     if (e.status === 409 && e.data?.unavailableSeats) {
