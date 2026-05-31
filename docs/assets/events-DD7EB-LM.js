@@ -1,4 +1,4 @@
-import{r as e,t}from"./api-rRfx0nEF.js";import{$ as n,At as r,Et as i,Q as a,Z as o,a as s,c,ct as l,dt as u,et as d,lt as f,mt as p,tt as m,w as h}from"./index-BNvfocuM.js";var g=c.extend({name:`skeleton`,style:`
+import{r as e,t}from"./api-C_5GK3_s.js";import{$ as n,At as r,Et as i,Q as a,Z as o,a as s,c,ct as l,dt as u,et as d,lt as f,mt as p,tt as m,w as h}from"./index-DzqHrnau.js";var g=c.extend({name:`skeleton`,style:`
     .p-skeleton {
         display: block;
         overflow: hidden;
