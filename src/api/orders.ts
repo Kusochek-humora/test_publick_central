@@ -13,5 +13,5 @@ export function useCreateOrder() {
 }
 
 export function getPaymentUrl(orderId: number) {
-  return apiFetch<{ paymentUrl: string }>(`/orders/${orderId}/payment-url`)
+  return apiFetch<{ url: string }>(`/orders/${orderId}/payment-url`)
 }

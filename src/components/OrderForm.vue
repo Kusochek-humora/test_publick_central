@@ -113,9 +113,9 @@ async function submit() {
       customerPhone: form.customerPhone,
     })
     const win = window.open('', '_blank')
-    const { paymentUrl } = await getPaymentUrl(order.orderId)
-    console.log('[payment-url]', paymentUrl)
-    if (win) win.location.href = paymentUrl
+    const { url } = await getPaymentUrl(order.orderId)
+    console.log('[payment-url]', url)
+    if (win) win.location.href = url
   } catch (e: any) {
     if (e.status === 409 && e.data?.unavailableSeats) {
       apiError.value = `Некоторые места уже заняты: ${e.data.unavailableSeats.join(', ')}`
