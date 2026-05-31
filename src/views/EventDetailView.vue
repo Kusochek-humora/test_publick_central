@@ -128,7 +128,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import Skeleton from 'primevue/skeleton'
 import Button from 'primevue/button'
 import Tag from 'primevue/tag'
@@ -149,6 +149,10 @@ const venueId = computed(() => event.value?.venueId ?? 0)
 const { data: venue } = useVenue(venueId)
 const { data: priceZones } = usePriceZones(venueId)
 const { data: seatGroups, isPending: groupsPending } = useSeatGroups(venueId)
+watchEffect(() => {
+  if (seatGroups.value?.length) console.log('[seatGroup[0]]', seatGroups.value[0])
+  if (eventSeats.value?.length) console.log('[eventSeat[0]]', eventSeats.value[0])
+})
 
 const selectedSeatIds = ref<number[]>([])
 const showOrderDialog = ref(false)

@@ -5,7 +5,7 @@
       TicketApp
     </RouterLink>
 
-    <span class="text-xs text-green-400 ml-auto">✓ debug v6</span>
+    <span class="text-xs text-green-400 ml-auto">✓ debug v7</span>
 
     <nav class="flex items-center gap-1 ml-2">
       <RouterLink
