@@ -5,7 +5,7 @@
       TicketApp
     </RouterLink>
 
-    <span class="text-xs text-green-400 ml-auto">✓ payment-url v2</span>
+    <span class="text-xs text-green-400 ml-auto">✓ debug v3</span>
 
     <nav class="flex items-center gap-1 ml-2">
       <RouterLink

@@ -27,6 +27,7 @@
         v-for="event in events"
         :key="event.id"
         :to="`/events/${event.id}`"
+        target="_blank"
         class="group block rounded-xl bg-slate-800 border border-slate-700 hover:border-violet-500 transition-all hover:shadow-lg hover:shadow-violet-500/10 overflow-hidden"
       >
         <!-- header gradient -->
@@ -61,12 +62,14 @@
 </template>
 
 <script setup lang="ts">
+import { watchEffect } from 'vue'
 import Skeleton from 'primevue/skeleton'
 import Button from 'primevue/button'
 import Tag from 'primevue/tag'
 import { useEvents } from '@/api/events'
 
 const { data: events, isPending, isError, refetch } = useEvents()
+watchEffect(() => { if (events.value?.length) console.log('[events]', events.value[0]) })
 
 function statusLabel(status: string) {
   return { published: 'Открыта продажа', draft: 'Черновик', cancelled: 'Отменено' }[status] ?? status
