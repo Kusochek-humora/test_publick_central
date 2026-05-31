@@ -1,4 +1,4 @@
-import{r as e,t}from"./api-DXVrFUGq.js";import{$ as n,Q as r,Tt as i,Z as a,a as o,c as s,ct as c,dt as l,et as u,kt as d,lt as f,mt as p,tt as m,w as h}from"./index-BfgVF9rL.js";var g=s.extend({name:`skeleton`,style:`
+import{r as e,t}from"./api-CQGuUB6z.js";import{$ as n,Q as r,Tt as i,Z as a,a as o,c as s,ct as c,dt as l,et as u,kt as d,lt as f,mt as p,tt as m,w as h}from"./index-Ca7jyQj6.js";var g=s.extend({name:`skeleton`,style:`
     .p-skeleton {
         display: block;
         overflow: hidden;
