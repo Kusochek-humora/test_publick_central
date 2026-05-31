@@ -114,7 +114,7 @@ async function submit() {
     })
     const { paymentUrl } = await getPaymentUrl(order.orderId)
     console.log('[payment-url]', paymentUrl)
-    window.location.href = paymentUrl
+    window.open(paymentUrl, '_blank')
   } catch (e: any) {
     if (e.status === 409 && e.data?.unavailableSeats) {
       apiError.value = `Некоторые места уже заняты: ${e.data.unavailableSeats.join(', ')}`

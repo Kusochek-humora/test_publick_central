@@ -27,7 +27,6 @@
         v-for="event in events"
         :key="event.id"
         :to="`/events/${event.id}`"
-        target="_blank"
         class="group block rounded-xl bg-slate-800 border border-slate-700 hover:border-violet-500 transition-all hover:shadow-lg hover:shadow-violet-500/10 overflow-hidden"
       >
         <!-- header gradient -->
