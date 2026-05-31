@@ -4,7 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  base: '/test_publick_central/dist/',
+  base: '/test_publick_central/',
+  build: {
+    outDir: 'docs',
+  },
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {
